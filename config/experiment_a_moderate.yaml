@@ -1,0 +1,10 @@
+# Experiment A: wall heating only, moderate kernel
+lambda0: 0.0
+m0: 0.0
+m1: 0.0
+kappa_w: 0.10
+wall_dtau: 1.0
+V_star: 2.0
+D_w: 0.05
+t_end: 100.0
+output_every: 50

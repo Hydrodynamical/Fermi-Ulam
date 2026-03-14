@@ -1,0 +1,37 @@
+# Simulation domain
+L: 1.0          # slab length
+N: 2000         # number of particles
+
+# Right wall oscillation (used when sigma=0, unmixed)
+A: 0.05         # wall amplitude
+omega: 20.0     # wall angular frequency
+
+# Wall heating kernel (used when sigma=1, mixed)
+# One Euler-Maruyama step of the OU SDE: ds = kappa_w(V*-s)dt_w + sqrt(2 D_w) dW
+# Effective fractional relaxation per hit: eta = kappa_w * wall_dtau
+kappa_w: 0.15   # OU drift rate toward V_star  [1/time]
+wall_dtau: 1.0  # effective wall-interaction time per hit  [time]
+V_star: 2.0     # wall temperature scale (OU fixed point in speed)  [speed]
+D_w: 0.05       # diffusion coefficient in speed space  [speed^2/time]
+
+# Bulk collisions
+lambda0: 1.0    # collision rate prefactor
+v_min: 0.1      # minimum relative speed for rate (avoid division by zero)
+eps_v: 0.1      # partner selection regularization
+n_bins: 20      # spatial bins for local density
+
+# Mixing (deterministic threshold, Option A)
+m0: 0.1         # constant part of mixing time
+m1: 0.3         # speed-dependent part of mixing time (tau = m0 + m1/(|v|+v_mix_floor))
+v_mix_floor: 0.2
+
+# Initial conditions
+v_init_scale: 1.0   # std of initial Gaussian velocity distribution
+
+# Time stepping
+dt: 0.002
+t_end: 50.0
+output_every: 100   # steps between observable snapshots
+
+# Random seed
+seed: 42

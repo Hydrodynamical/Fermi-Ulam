@@ -1,0 +1,10 @@
+# Experiment A: wall heating only, deterministic Fermi wall
+# Force sigma=0 always so the moving-wall reflection is used.
+# Do this by making tau_mix very large so no particle ever mixes.
+lambda0: 0.0
+m0: 1000000.0
+m1: 0.0
+A: 0.05
+omega: 20.0
+t_end: 100.0
+output_every: 50

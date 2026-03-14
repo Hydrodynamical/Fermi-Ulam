@@ -1,0 +1,10 @@
+# Experiment B-FP: lambda0=1.0  (strong collisions)
+kappa_w: 3.0
+wall_dtau: 0.05
+V_star: 2.0
+D_w: 0.05
+lambda0: 1.0
+m0: 0.1
+m1: 0.3
+t_end: 200.0
+output_every: 100

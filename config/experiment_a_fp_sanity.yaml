@@ -1,0 +1,11 @@
+# Sanity check: single FP/OU wall run, no collisions, all particles mixed.
+# Goal: confirm energy rises, no v=0 pile-up, histogram thermalizes near V*.
+lambda0: 0.0
+m0: 0.0
+m1: 0.0
+kappa_w: 3.0
+wall_dtau: 0.05
+V_star: 2.0
+D_w: 0.05
+t_end: 100.0
+output_every: 50

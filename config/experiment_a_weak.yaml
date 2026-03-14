@@ -1,0 +1,14 @@
+# Experiment A: wall heating only, weak kernel
+# No bulk collisions (lambda0=0), all particles start mixed (sigma=1 always),
+# so the stochastic kernel fires on every right-wall hit.
+lambda0: 0.0
+# Force all particles to stay mixed by setting tau_mix = 0
+m0: 0.0
+m1: 0.0
+# Weak OU kernel: kappa_w * wall_dtau = 0.02  (slow drift toward V*)
+kappa_w: 0.02
+wall_dtau: 1.0
+V_star: 2.0
+D_w: 0.01
+t_end: 100.0
+output_every: 50

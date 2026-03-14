@@ -1,0 +1,5 @@
+# Inherits base, very high collision rate to suppress mixing
+lambda0: 20.0
+m0: 0.5
+m1: 1.0
+t_end: 100.0
