@@ -1,0 +1,38 @@
+# Non-interacting calibration experiment parameters.
+# Physical parameters A, omega, L are inherited from base.yaml.
+
+# --- Trajectory generation ---
+N_particles: 500          # independent trajectories (random psi_0)
+N_hits: 100000            # wall-hit events per trajectory
+seed: 123
+
+# --- Energy binning ---
+u_min: 0.01               # minimum energy (avoids near-zero speeds)
+u_max: 50.0               # maximum energy to analyse
+n_u_bins: 40              # log-spaced bins
+
+# --- Phase mixing estimation ---
+acf_max_lag: 200          # maximum lag k for C(k) = <cos(psi_{n+k} - psi_n)>
+acf_threshold: 0.05       # |C(k)| < threshold -> phase decorrelated
+m_min: 5                  # minimum coarse-graining lag m
+m_safety_factor: 3.0      # m(u) = ceil(safety * tau_lag(u))
+
+# --- Kramers-Moyal estimation ---
+n_km_samples_min: 200     # skip energy bins with fewer (particle, base-hit) pairs
+
+# --- Fokker-Planck comparison ---
+fp_u_grid_points: 500     # not currently used (kept for future fine-grid interpolation)
+
+# --- Diagnostics ---
+save_diagnostics: true    # save raw trajectories for a small subset of particles
+n_diag_particles: 10      # how many raw trajectories to write to diag_trajectories.npz
+
+# --- Extended diagnostics (second-pass analysis) ---
+run_diagnostics: true
+n_psi_bins_uniformity: 36         # phase bins for entropy / uniformity test
+n_psi_bins_heatmap: 12            # phase bins for (u, psi) drift heatmap
+variance_lag_values: [1, 2, 4, 8, 16, 32, 64]
+small_jump_eta_values: [0.05, 0.1, 0.2, 0.5]
+entropy_threshold: 0.8            # bins below this entropy are treated as non-chaotic
+run_bootstrap: false              # bootstrap CI is expensive; opt-in
+n_bootstrap: 50

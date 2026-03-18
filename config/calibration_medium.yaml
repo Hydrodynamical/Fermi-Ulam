@@ -1,0 +1,4 @@
+N_particles: 200
+N_hits: 50000
+n_u_bins: 40
+acf_max_lag: 200
